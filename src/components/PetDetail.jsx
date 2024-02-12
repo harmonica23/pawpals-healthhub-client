@@ -34,6 +34,41 @@ const PetDetail = () => {
         return age;
     };
 
+    const handleDelete = async (category, entry) => {
+        const { id } = entry;
+        try {
+            await Client.delete(`/${category}/${id}`);
+            // Reload or update the data after deletion based on the category
+            switch (category) {
+                case 'diet':
+                    const dietData = await Client.get(`/diet/pet/${id}`);
+                    setDiets(dietData.data);
+                    break;
+                case 'vetConsult':
+                    const vetConsultData = await Client.get(`/vetConsult/pet/${id}`);
+                    setVetConsults(vetConsultData.data);
+                    break;
+                case 'vax':
+                    const vaxData = await Client.get(`/vax/pet/${id}`);
+                    setVax(vaxData.data);
+                    break;
+                case 'med':
+                    const medData = await Client.get(`/med/pet/${id}`);
+                    setMeds(medData.data);
+                    break;
+                case 'incident':
+                    const incidentData = await Client.get(`/incident/pet/${id}`);
+                    setIncidents(incidentData.data);
+                    break;
+                // Add more cases for other categories if needed
+                default:
+                    break;
+            }
+        } catch (error) {
+            console.error(`Error deleting ${category} entry:`, error);
+        }
+    };
+
     useEffect(() => {
         const fetchPet = async () => {
             const data = await Client.get(`/pet/${id}`)
@@ -56,17 +91,17 @@ const PetDetail = () => {
             const data = await Client.get(`/vetConsult/pet/${id}`)
             setVetConsults(data.data)
         }
-        
+
         const fetchVax = async () => {
             const data = await Client.get(`/vax/pet/${id}`)
             setVax(data.data)
         }
-        
+
         const fetchMeds = async () => {
             const data = await Client.get(`/med/pet/${id}`)
             setMeds(data.data)
         }
-        
+
         const fetchIncidents = async () => {
             const data = await Client.get(`/incident/pet/${id}`)
             setIncidents(data.data)
@@ -117,6 +152,10 @@ const PetDetail = () => {
                             <td>{formatDate(diet.createdAt)}</td>
                             <td>{diet.cups} cup(s) {diet.brand} {diet.frequency}</td>
                             <td>{diet.weight} lbs.</td>
+                            <td>
+                                {/* Delete button */}
+                                <button onClick={() => handleDelete('diet', diet)}>Delete</button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
@@ -138,6 +177,10 @@ const PetDetail = () => {
                             <td>{formatDate(vetConsult.date)}</td>
                             <td>{vetConsult.visitType}</td>
                             <td>{vetConsult.description}</td>
+                            <td>
+                                {/* Delete button */}
+                                <button onClick={() => handleDelete('vetConsult', vetConsult)}>Delete</button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
@@ -157,27 +200,10 @@ const PetDetail = () => {
                             <td>{vax.name}</td>
                             <td>{formatDate(vax.dateGiven)}</td>
                             <td>{formatDate(vax.nextDue)}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Medication</th>
-                        <th>Dose</th>
-                        <th>Frequency</th>
-                        <th>Start Date</th>
-                        <th>End Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {meds.map((vax, index) => (
-                        <tr key={index}>
-                            <td>{vax.name}</td>
-                            <td>{formatDate(vax.dateGiven)}</td>
-                            <td>{formatDate(vax.nextDue)}</td>
+                            <td>
+                                {/* Delete button */}
+                                <button onClick={() => handleDelete('vax', vax)}>Delete</button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
@@ -197,10 +223,42 @@ const PetDetail = () => {
                             <td>{formatDate(incident.date)}</td>
                             <td>{incident.incidentType}</td>
                             <td>{incident.description}</td>
+                            <td>
+                                {/* Delete button */}
+                                <button onClick={() => handleDelete('incident', incident)}>Delete</button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medication</th>
+                        <th>Dose</th>
+                        <th>Frequency</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {meds.map((med, index) => (
+                        <tr key={index}>
+                            <td>{med.name}</td>
+                            <td>{med.dose}</td>
+                            <td>{med.frequency}</td>
+                            <td>{formatDate(med.dateStart)}</td>
+                            <td>{formatDate(med.dateEnd)}</td>
+                            <td>
+                                {/* Delete button */}
+                                <button onClick={() => handleDelete('med', med)}>Delete</button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+
 
             <button onClick={handleAddDietClick}>Add Diet and Weight</button>
             <br />
