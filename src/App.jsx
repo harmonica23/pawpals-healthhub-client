@@ -10,6 +10,7 @@ import './App.css'
 import { CheckSession } from './services/auth'
 import AddPetForm from './components/AddPetForm'
 import DietWtForm from './components/DietWtForm'
+import HealthDetailsForm from './components/HealthDetailsForm'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -48,6 +49,11 @@ const App = () => {
           <Route path="/pet/:id" element={<PetDetail />} />
           <Route path="/pet" element={<AddPetForm />} />
           <Route path="/pet/:id/diet" element={<DietWtForm />} />
+          <Route path="/pet/:id/vetConsult" element={<HealthDetailsForm />} />
+          <Route path="/pet/:id/vax" element={<HealthDetailsForm />} />
+          <Route path="/pet/:id/med" element={<HealthDetailsForm />} />
+          <Route path="/pet/:id/incident" element={<HealthDetailsForm />} />
+
         </Routes>
       </main>
     </div >

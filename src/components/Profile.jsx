@@ -11,10 +11,10 @@ const Profile = ({ user }) => {
         const fetchPets = async () => {
             if (user) {
                 try {
-                    const data = await Client.get('/pet');
+                    const data = await Client.get('/pet')
                     setPets(data.data);
                 } catch (error) {
-                    console.error('Error fetching pets:', error);
+                    console.error('Error fetching pets:', error)
                 }
             }
         };
@@ -22,7 +22,9 @@ const Profile = ({ user }) => {
         fetchPets();
     }, [user]);
 
-
+    const handleAddPetClick = () => {
+        navigate(`/pet`);
+    };
 
     return (
         <div>
@@ -41,8 +43,10 @@ const Profile = ({ user }) => {
                     <button onClick={() => navigate('/signin')}>Sign In</button>
                 </div>
             )}
+            <br />
+            <button onClick={handleAddPetClick}>Add a Pet</button>
         </div>
-    );
-};
+    )
+}
 
 export default Profile
