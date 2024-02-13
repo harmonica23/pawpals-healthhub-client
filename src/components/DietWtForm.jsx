@@ -9,7 +9,7 @@ const DietWtForm = () => {
 
     const [formData, setFormData] = useState({
         brand: '',
-        cups: '',
+        amount: '',
         frequency: '',
         feedingNotes: '',
         weight: '',
@@ -49,8 +49,8 @@ const DietWtForm = () => {
                 </label>
 
                 <label>
-                    Cups:
-                    <input type="number" name="cups" value={formData.cups} onChange={handleInputChange} required />
+                    Amount:
+                    <input type="text" name="amount" value={formData.amount} onChange={handleInputChange} required />
                 </label>
 
                 <label>

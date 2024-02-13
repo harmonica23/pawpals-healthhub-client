@@ -1,37 +1,56 @@
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const Nav = ({ user, handleLogOut }) => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
+
     let userOptions
     if (user) {
         userOptions = (
-            <nav>
+            <>
+                <NavLink to="/" className="nav-link">
+                    Home
+                </NavLink>
+                <NavLink to="/pet" className="nav-link">
+                    Add a Pet
+                </NavLink>
+                <NavLink to="/profile" className="nav-link">
+                    My Pets
+                </NavLink>
                 <NavLink onClick={handleLogOut} to="/">
                     Sign Out
                 </NavLink>
-            </nav>
+            </>
         )
     }
 
     const publicOptions = (
-        <nav>
-            <NavLink to="/register">Register</NavLink>
-            <NavLink to="/signin">Sign In</NavLink>
-        </nav>
+        <>
+            <NavLink to="/register" className="nav-link" onClick={closeMenu}>Register</NavLink>
+            <NavLink to="/signin" className="nav-link" onClick={closeMenu}>Sign In</NavLink>
+        </>
     )
 
     return (
         <header>
-            <nav>
-                <NavLink to="/" className="nav-link">
-                    Home
-                </NavLink>
-                <NavLink to ="/pet" className="nav-link">
-                    Add a Pet
-                </NavLink>
-                <NavLink to ="/profile" className="nav-link">
-                    My Pet Index
-                </NavLink>
-                {user ? userOptions : publicOptions}
+            <nav className='navigation'>
+            <div className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                </div>
+                <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
+                    {user && userOptions}
+                    {!user && publicOptions}
+                </div>
             </nav>
         </header>
     )

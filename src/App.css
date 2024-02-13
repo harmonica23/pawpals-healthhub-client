@@ -1,3 +1,202 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+}
+
+.navigation {
+  position: relative;
+  width: 100%;
+  height: 8vmin;
+  background-color: #e68387;
+}
+
+/* styles for the hamburger menu */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1em;
+}
+
+.bar {
+  width: 1.5em;
+  height: 0.2em;
+  background-color: white;
+  margin: 0.4em 0;
+  transition: 0.4s;
+}
+
+.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-0.5em, 0.6em);
+}
+
+.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-0.5em, -0.6em);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+      display: block;
+      padding: 1em;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      display: none;
+      z-index: 1;
+  }
+
+  .nav-links.open {
+      display: flex;
+  }
+
+  .nav-link {
+      padding: 1em;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+  }
+}
+
+/* container for pet names on profile page */
+.pet-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+/* pencil button */
+.editBtn {
+  width: 3em; 
+  height: 3em; 
+  border-radius: 1em; 
+  border: none;
+  background-color: rgb(93, 93, 116);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.123); 
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.editBtn::before {
+  content: "";
+  width: 200%;
+  height: 200%;
+  background-color: rgb(102, 102, 141);
+  position: absolute;
+  z-index: 1;
+  transform: scale(0);
+  transition: all 0.3s;
+  border-radius: 50%;
+  filter: blur(0.1em); 
+}
+
+.editBtn:hover::before {
+  transform: scale(1);
+}
+
+.editBtn:hover {
+  box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.336); 
+}
+
+.editBtn svg {
+  height: 1.5em; 
+  fill: white;
+  z-index: 3;
+  transition: all 0.2s;
+  transform-origin: bottom;
+}
+
+.editBtn:hover svg {
+  transform: rotate(-15deg) translateX(0.5em); 
+}
+
+.editBtn::after {
+  content: "";
+  width: 1.5em; 
+  height: 0.1em; 
+  position: absolute;
+  bottom: 0.95em; 
+  left: -0.25em; 
+  background-color: white;
+  border-radius: 0.2em; 
+  z-index: 2;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-out;
+}
+
+.editBtn:hover::after {
+  transform: scaleX(1);
+  left: 0; 
+  transform-origin: right;
+}
+
+/* trash can button */
+.bin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 3em; 
+  height: 3em; 
+  border-radius: 1em; 
+  background-color: rgb(255, 95, 95);
+  cursor: pointer;
+  border: 0.3em solid rgb(255, 201, 201); 
+  transition-duration: 0.3s;
+}
+
+.bin-bottom {
+  width: 0.75em; 
+}
+
+.bin-top {
+  width: 0.85em;
+  transform-origin: right;
+  transition-duration: 0.3s;
+}
+
+.bin-button:hover .bin-top {
+  transform: rotate(45deg);
+}
+
+.bin-button:hover {
+  background-color: rgb(255, 0, 0);
+}
+
+.bin-button:active {
+  transform: scale(0.9);
 }

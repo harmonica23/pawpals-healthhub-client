@@ -40,7 +40,7 @@ const PetDetail = () => {
         try {
             await Client.delete(`/${category}/${_id}`);
             // Reload or update the data after deletion based on the category
-            let petData 
+            let petData
             switch (category) {
                 case 'diet':
                     petData = await Client.get(`/diet/pet/${_id}`);
@@ -133,7 +133,7 @@ const PetDetail = () => {
             {recentDiet && (
                 <div>
                     <h3>Current Health Summary</h3>
-                    <p>{pet.name} eats {recentDiet.cups} cup(s) of {recentDiet.brand} {recentDiet.frequency}.</p>
+                    <p>{pet.name} eats {recentDiet.amount} of {recentDiet.brand} {recentDiet.frequency}.</p>
                     <p>{pet.name} weighs {recentDiet.weight} lbs.</p>
                 </div>
             )}
@@ -144,8 +144,9 @@ const PetDetail = () => {
                     <tr>
                         <th>Date</th>
                         <th>Diet</th>
+                        <th>Feeding Notes</th>
                         <th>Weight</th>
-                        <th></th>
+                        <th>Remove Entry</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -153,10 +154,30 @@ const PetDetail = () => {
                         <tr key={index}>
                             <td>{formatDate(diet.createdAt)}</td>
                             <td>{diet.cups} cup(s) {diet.brand} {diet.frequency}</td>
+                            <td>{diet.feedingNotes}</td>
                             <td>{diet.weight} lbs.</td>
                             <td>
                                 {/* Delete button */}
-                                <button onClick={() => handleDelete('diet', diet)}>Delete</button>
+                                <button onClick={() => handleDelete('diet', diet)} className='bin-button'>
+                                    <svg className="bin-top" viewBox="0 0 39 7" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                        <line y1="5" x2="39" y2="5" stroke="white" stroke-width="4">
+                                        </line>
+                                        <line x1="12" y1="1.5" x2="26.0357" y2="1.5" stroke="white" stroke-width="3">
+                                        </line>
+                                    </svg>
+                                    <svg className="bin-bottom" viewBox="0 0 33 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="path-1-inside-1_8_19" fill="white">
+                                            <path d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z" >
+                                            </path>
+                                        </mask>
+                                        <path d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z" fill="white" mask="url(#path-1-inside-1_8_19)" >
+                                        </path>
+                                        <path d="M12 6L12 29" stroke="white" stroke-width="4">
+                                        </path>
+                                        <path d="M21 6V29" stroke="white" stroke-width="4">
+                                        </path>
+                                    </svg>
+                                </button>
                             </td>
                         </tr>
                     ))}
@@ -171,6 +192,7 @@ const PetDetail = () => {
                         <th>Date</th>
                         <th>Visit Type</th>
                         <th>Description</th>
+                        <th>Remove Entry</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -181,7 +203,26 @@ const PetDetail = () => {
                             <td>{vetConsult.description}</td>
                             <td>
                                 {/* Delete button */}
-                                <button onClick={() => handleDelete('vetConsult', vetConsult)}>Delete</button>
+                                <button onClick={() => handleDelete('vetConsult', vetConsult)} className='bin-button'>
+                                    <svg className="bin-top" viewBox="0 0 39 7" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                        <line y1="5" x2="39" y2="5" stroke="white" stroke-width="4">
+                                        </line>
+                                        <line x1="12" y1="1.5" x2="26.0357" y2="1.5" stroke="white" stroke-width="3">
+                                        </line>
+                                    </svg>
+                                    <svg className="bin-bottom" viewBox="0 0 33 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="path-1-inside-1_8_19" fill="white">
+                                            <path d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z" >
+                                            </path>
+                                        </mask>
+                                        <path d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z" fill="white" mask="url(#path-1-inside-1_8_19)" >
+                                        </path>
+                                        <path d="M12 6L12 29" stroke="white" stroke-width="4">
+                                        </path>
+                                        <path d="M21 6V29" stroke="white" stroke-width="4">
+                                        </path>
+                                    </svg>
+                                </button>
                             </td>
                         </tr>
                     ))}
@@ -194,6 +235,7 @@ const PetDetail = () => {
                         <th>Vaccine</th>
                         <th>Date Given</th>
                         <th>Next Due</th>
+                        <th>Remove Entry</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -204,7 +246,26 @@ const PetDetail = () => {
                             <td>{formatDate(vax.nextDue)}</td>
                             <td>
                                 {/* Delete button */}
-                                <button onClick={() => handleDelete('vax', vax)}>Delete</button>
+                                <button onClick={() => handleDelete('vax', vax)} className='bin-button'>
+                                <svg className="bin-top" viewBox="0 0 39 7" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                    <line y1="5" x2="39" y2="5" stroke="white" stroke-width="4">
+                                    </line>
+                                    <line x1="12" y1="1.5" x2="26.0357" y2="1.5" stroke="white" stroke-width="3">
+                                    </line>
+                                </svg>
+                                <svg className="bin-bottom" viewBox="0 0 33 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="path-1-inside-1_8_19" fill="white">
+                                        <path d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z" >
+                                        </path>
+                                    </mask>
+                                    <path d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z" fill="white" mask="url(#path-1-inside-1_8_19)" >  
+                                    </path>
+                                    <path d="M12 6L12 29" stroke="white" stroke-width="4">
+                                    </path>
+                                    <path d="M21 6V29" stroke="white" stroke-width="4">
+                                    </path>
+                                </svg>
+                                </button>
                             </td>
                         </tr>
                     ))}
@@ -217,6 +278,7 @@ const PetDetail = () => {
                         <th>Date</th>
                         <th>Incident Type</th>
                         <th>Description</th>
+                        <th>Remove Entry</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -227,7 +289,26 @@ const PetDetail = () => {
                             <td>{incident.description}</td>
                             <td>
                                 {/* Delete button */}
-                                <button onClick={() => handleDelete('incident', incident)}>Delete</button>
+                                <button onClick={() => handleDelete('incident', incident)} className='bin-button'>
+                                <svg className="bin-top" viewBox="0 0 39 7" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                    <line y1="5" x2="39" y2="5" stroke="white" stroke-width="4">
+                                    </line>
+                                    <line x1="12" y1="1.5" x2="26.0357" y2="1.5" stroke="white" stroke-width="3">
+                                    </line>
+                                </svg>
+                                <svg className="bin-bottom" viewBox="0 0 33 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="path-1-inside-1_8_19" fill="white">
+                                        <path d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z" >
+                                        </path>
+                                    </mask>
+                                    <path d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z" fill="white" mask="url(#path-1-inside-1_8_19)" >  
+                                    </path>
+                                    <path d="M12 6L12 29" stroke="white" stroke-width="4">
+                                    </path>
+                                    <path d="M21 6V29" stroke="white" stroke-width="4">
+                                    </path>
+                                </svg>
+                                </button>
                             </td>
                         </tr>
                     ))}
@@ -242,6 +323,7 @@ const PetDetail = () => {
                         <th>Frequency</th>
                         <th>Start Date</th>
                         <th>End Date</th>
+                        <th>Remove Entry</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -254,7 +336,26 @@ const PetDetail = () => {
                             <td>{formatDate(med.dateEnd)}</td>
                             <td>
                                 {/* Delete button */}
-                                <button onClick={() => handleDelete('med', med)}>Delete</button>
+                                <button onClick={() => handleDelete('med', med)} className='bin-button'>
+                                <svg className="bin-top" viewBox="0 0 39 7" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                    <line y1="5" x2="39" y2="5" stroke="white" stroke-width="4">
+                                    </line>
+                                    <line x1="12" y1="1.5" x2="26.0357" y2="1.5" stroke="white" stroke-width="3">
+                                    </line>
+                                </svg>
+                                <svg className="bin-bottom" viewBox="0 0 33 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="path-1-inside-1_8_19" fill="white">
+                                        <path d="M0 0H33V35C33 37.2091 31.2091 39 29 39H4C1.79086 39 0 37.2091 0 35V0Z" >
+                                        </path>
+                                    </mask>
+                                    <path d="M0 0H33H0ZM37 35C37 39.4183 33.4183 43 29 43H4C-0.418278 43 -4 39.4183 -4 35H4H29H37ZM4 43C-0.418278 43 -4 39.4183 -4 35V0H4V35V43ZM37 0V35C37 39.4183 33.4183 43 29 43V35V0H37Z" fill="white" mask="url(#path-1-inside-1_8_19)" >  
+                                    </path>
+                                    <path d="M12 6L12 29" stroke="white" stroke-width="4">
+                                    </path>
+                                    <path d="M21 6V29" stroke="white" stroke-width="4">
+                                    </path>
+                                </svg>
+                                </button>
                             </td>
                         </tr>
                     ))}
