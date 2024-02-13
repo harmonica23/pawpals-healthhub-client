@@ -26,6 +26,21 @@ const Profile = ({ user }) => {
         navigate(`/pet`);
     };
 
+    const handleEditPetClick = (petId) => {
+        navigate(`/pet/edit/${petId}`);
+    };
+    
+    const handleDeletePetClick = async (petId) => {
+        try {
+            await Client.delete(`/pet/${petId}`);
+            // Refresh the pet list after deletion
+            const updatedPets = pets.filter(pet => pet._id !== petId);
+            setPets(updatedPets);
+        } catch (error) {
+            console.error('Error deleting pet:', error);
+        }
+    };
+
     return (
         <div>
             {user ? (
@@ -34,6 +49,8 @@ const Profile = ({ user }) => {
                     {pets.map(pet => (
                         <div key={pet._id}>
                             <Link to={`/pet/${pet._id}`}>{pet.name}</Link>
+                            <button onClick={() => handleEditPetClick(pet._id)}>Edit</button>
+                            <button onClick={() => handleDeletePetClick(pet._id)}>Delete</button>
                         </div>
                     ))}
                 </div>

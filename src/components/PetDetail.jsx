@@ -35,30 +35,32 @@ const PetDetail = () => {
     };
 
     const handleDelete = async (category, entry) => {
-        const { id } = entry;
+        const { _id } = entry;
+        console.log(entry)
         try {
-            await Client.delete(`/${category}/${id}`);
+            await Client.delete(`/${category}/${_id}`);
             // Reload or update the data after deletion based on the category
+            let petData 
             switch (category) {
                 case 'diet':
-                    const dietData = await Client.get(`/diet/pet/${id}`);
-                    setDiets(dietData.data);
+                    petData = await Client.get(`/diet/pet/${_id}`);
+                    setDiets(petData.data);
                     break;
                 case 'vetConsult':
-                    const vetConsultData = await Client.get(`/vetConsult/pet/${id}`);
-                    setVetConsults(vetConsultData.data);
+                    petData = await Client.get(`/vetConsult/pet/${_id}`);
+                    setVetConsults(petData.data);
                     break;
                 case 'vax':
-                    const vaxData = await Client.get(`/vax/pet/${id}`);
-                    setVax(vaxData.data);
+                    petData = await Client.get(`/vax/pet/${_id}`);
+                    setVax(petData.data);
                     break;
                 case 'med':
-                    const medData = await Client.get(`/med/pet/${id}`);
-                    setMeds(medData.data);
+                    petData = await Client.get(`/med/pet/${_id}`);
+                    setMeds(petData.data);
                     break;
                 case 'incident':
-                    const incidentData = await Client.get(`/incident/pet/${id}`);
-                    setIncidents(incidentData.data);
+                    petData = await Client.get(`/incident/pet/${_id}`);
+                    setIncidents(petData.data);
                     break;
                 // Add more cases for other categories if needed
                 default:

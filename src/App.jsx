@@ -11,6 +11,7 @@ import { CheckSession } from './services/auth'
 import AddPetForm from './components/AddPetForm'
 import DietWtForm from './components/DietWtForm'
 import HealthDetailsForm from './components/HealthDetailsForm'
+import EditPet from './components/EditPet'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -53,7 +54,7 @@ const App = () => {
           <Route path="/pet/:id/vax" element={<HealthDetailsForm />} />
           <Route path="/pet/:id/med" element={<HealthDetailsForm />} />
           <Route path="/pet/:id/incident" element={<HealthDetailsForm />} />
-
+          <Route path="/pet/edit/:id" element={<EditPet />} />
         </Routes>
       </main>
     </div >
