@@ -25,7 +25,7 @@ const Nav = ({ user, handleLogOut }) => {
                 <NavLink to="/profile" className="nav-link">
                     My Pets
                 </NavLink>
-                <NavLink onClick={handleLogOut} to="/">
+                <NavLink onClick={handleLogOut} to="/" className="nav-link">
                     Sign Out
                 </NavLink>
             </>

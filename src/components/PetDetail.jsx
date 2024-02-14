@@ -127,7 +127,7 @@ const PetDetail = () => {
     }
 
     return (
-        <div>
+        <div className='add-pet-form'>
             <h2>{pet.name}</h2>
             {/* Display the most recent diet and weight */}
             {recentDiet && (

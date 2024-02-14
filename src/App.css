@@ -2,23 +2,75 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-
 body {
+  background-image: url('/public/images/blue_bckgrnd.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
   height: 100vh;
+  font-size: 3vw;
+}
+
+/* App.jsx container */
+.container {
+  max-width: 100%;
+  margin: 0;
+  padding: 1rem 0 1rem 0;
+  box-sizing: border-box;
+}
+
+.profile-container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 4vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* container for pet names on profile page */
+.pet-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4vmin;
+}
+
+.pet-name {
+  text-decoration: none;
+  padding: 2vmin;
+  color: black;
+  font-size: 6vw;
 }
 
 .navigation {
   position: relative;
   width: 100%;
   height: 8vmin;
-  background-color: #e68387;
+  background-color:rgba(230, 131, 135, 0.5);
+}
+
+.nav-links, .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  text-decoration: none;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.2rem;
+  color:black;
+  padding-top: 0.25rem;
+}
+
+.nav-link:hover {
+  color: rgb(93, 93, 116);
 }
 
 /* styles for the hamburger menu */
@@ -51,10 +103,6 @@ body {
   transform: rotate(45deg) translate(-0.5em, -0.6em);
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-}
 
 @media (max-width: 768px) {
   .menu-toggle {
@@ -65,10 +113,10 @@ body {
   .nav-links {
       flex-direction: column;
       position: absolute;
-      top: 60px;
+      top: 1.5em;
       left: 0;
       right: 0;
-      background-color: #333;
+      background-color: white;
       display: none;
       z-index: 1;
   }
@@ -80,41 +128,43 @@ body {
   .nav-link {
       padding: 1em;
       text-align: center;
-      color: white;
+      color: black;
       text-decoration: none;
       cursor: pointer;
   }
 }
 
-/* container for pet names on profile page */
-.pet-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5em;
-}
 
 /* pencil button */
 .editBtn {
   width: 3em; 
   height: 3em; 
   border-radius: 1em; 
-  border: none;
+  border: 0.3em solid rgb(255, 201, 201); 
   background-color: rgb(93, 93, 116);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.123); 
   cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: all 0.3s;
+  margin: 1vmin;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+  rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  background: linear-gradient(
+  0deg,
+  rgba(230, 131, 135, 1) 0%,
+  rgba(255, 213, 0, 1) 47%,
+  rgba(255, 213, 0, 1) 47%,
+  rgba(243, 131, 135, 0.5) 100%
+);
 }
 
 .editBtn::before {
   content: "";
   width: 200%;
   height: 200%;
-  background-color: rgb(102, 102, 141);
   position: absolute;
   z-index: 1;
   transform: scale(0);
@@ -129,6 +179,7 @@ body {
 
 .editBtn:hover {
   box-shadow: 0px 0.5em 1em rgba(0, 0, 0, 0.336); 
+  background-color: rgb(255, 0, 0);
 }
 
 .editBtn svg {
@@ -173,10 +224,21 @@ body {
   width: 3em; 
   height: 3em; 
   border-radius: 1em; 
+  border: 0.3em solid rgb(255, 201, 201); 
   background-color: rgb(255, 95, 95);
   cursor: pointer;
-  border: 0.3em solid rgb(255, 201, 201); 
+  /* border: 0.3em solid rgba(0, 0, 0, 0.336); */
   transition-duration: 0.3s;
+  margin: 1vmin;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+  rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  background: linear-gradient(
+  0deg,
+  rgba(230, 131, 135, 1) 0%,
+  rgba(255, 213, 0, 1) 47%,
+  rgba(255, 213, 0, 1) 47%,
+  rgba(243, 131, 135, 0.5) 100%
+);
 }
 
 .bin-bottom {
@@ -199,4 +261,51 @@ body {
 
 .bin-button:active {
   transform: scale(0.9);
+}
+
+
+/* add pet button */
+.add-pet-button {
+  font-size: 17px;
+  font-family: inherit;
+  font-weight: 700;
+  padding: 4px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: none;
+  color: black;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  background: linear-gradient(
+    0deg,
+    rgba(230, 131, 135, 1) 0%,
+    rgba(255, 213, 0, 1) 47%,
+    rgba(255, 213, 0, 1) 47%,
+    rgba(243, 131, 135, 0.5) 100%
+  );
+}
+
+.add-pet-button .button-content {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 0.7em 1.5em;
+  padding-left: 1.2em;
+  border-radius: 16px;
+}
+
+.add-pet-button svg {
+  width: 22px;
+  height: 22px;
+  margin-right: 6px;
+  color: #ff0000;
+  transition: transform 0.3s;
+}
+
+.add-pet-button:hover svg {
+  transform: scale(1.2);
+}
+
+.add-pet-form {
+  
 }
