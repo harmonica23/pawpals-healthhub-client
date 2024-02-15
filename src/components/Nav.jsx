@@ -12,21 +12,23 @@ const Nav = ({ user, handleLogOut }) => {
         setMenuOpen(false);
     };
 
+    const handleLogOutAndCloseMenu = () => {
+        handleLogOut();
+        closeMenu();
+    };    
+
     let userOptions
     if (user) {
         userOptions = (
             <>
-                <NavLink to="/" className="nav-link">
-                    Home
+                <NavLink to="/" className="nav-link" onClick={closeMenu}>
+                    HOME
                 </NavLink>
-                <NavLink to="/pet" className="nav-link">
-                    Add a Pet
+                <NavLink to="/profile" className="nav-link" onClick={closeMenu}>
+                    MY PETS
                 </NavLink>
-                <NavLink to="/profile" className="nav-link">
-                    My Pets
-                </NavLink>
-                <NavLink onClick={handleLogOut} to="/" className="nav-link">
-                    Sign Out
+                <NavLink to="/" className="nav-link" onClick={handleLogOutAndCloseMenu}>
+                    SIGN OUT
                 </NavLink>
             </>
         )
@@ -34,8 +36,8 @@ const Nav = ({ user, handleLogOut }) => {
 
     const publicOptions = (
         <>
-            <NavLink to="/register" className="nav-link" onClick={closeMenu}>Register</NavLink>
-            <NavLink to="/signin" className="nav-link" onClick={closeMenu}>Sign In</NavLink>
+            <NavLink to="/register" className="nav-link" onClick={closeMenu}>REGISTER</NavLink>
+            <NavLink to="/signin" className="nav-link" onClick={closeMenu}>SIGN IN</NavLink>
         </>
     )
 

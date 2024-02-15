@@ -74,7 +74,6 @@ const HealthDetailsForm = () => {
                             name="date"
                             value={healthDetails.vetConsult.date}
                             onChange={(e) => handleInputChange('vetConsult', e)}
-                            required
                         />
                     </label>
                     <label>
@@ -83,7 +82,6 @@ const HealthDetailsForm = () => {
                             name="visitType"
                             value={healthDetails.vetConsult.visitType}
                             onChange={(e) => handleInputChange('vetConsult', e)}
-                            required
                         >
                             <option value="">Select Incident Type</option> {/* Optional: Prompt user to select an option */}
                             <option value="healthy">Healthy</option>
@@ -115,7 +113,6 @@ const HealthDetailsForm = () => {
                             name="name"
                             value={healthDetails.vax.name}
                             onChange={(e) => handleInputChange('vax', e)}
-                            required
                         />
                     </label>
                     <label>
@@ -125,7 +122,6 @@ const HealthDetailsForm = () => {
                             name="dateGiven"
                             value={healthDetails.vax.dateGiven}
                             onChange={(e) => handleInputChange('vax', e)}
-                            required
                         />
                     </label>
                     <label>
@@ -148,7 +144,6 @@ const HealthDetailsForm = () => {
                             name="name"
                             value={healthDetails.med.name}
                             onChange={(e) => handleInputChange('med', e)}
-                            required
                         />
                     </label>
                     <label>
@@ -182,7 +177,6 @@ const HealthDetailsForm = () => {
                             name="dateStart"
                             value={healthDetails.med.dateStart}
                             onChange={(e) => handleInputChange('med', e)}
-                            required
                         />
                     </label>
                     <label>
@@ -205,7 +199,6 @@ const HealthDetailsForm = () => {
                             name="date"
                             value={healthDetails.incident.date}
                             onChange={(e) => handleInputChange('incident', e)}
-                            required
                         />
                     </label>
                     <label>

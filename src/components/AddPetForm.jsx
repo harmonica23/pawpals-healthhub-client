@@ -12,31 +12,26 @@ const AddPetForm = () => {
         kind: '',
         gender: '',
         spayNeuterStatus: '',
+        image: null,
     })
 
     const handleInputChange = (e) => {
-        const { name, value } = e.target
+        const { name, value, type } = e.target;
 
-        setFormData({
-            ...formData,
-            [name]: value,
-        })
+        setFormData((prevFormData) => ({
+            ...prevFormData,
+            [name]: type === 'file' ? e.target.files[0] : value,
+        }))
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-
-        try {
-            await Client.post('/pet', formData);
-            navigate('/profile')
-        } catch (error) {
-            console.error('Error adding pet:', error)
-        }
-    }
+            await Client.post('/pet', formData,);
+            navigate('/profile');
+    };
 
     return (
         <div className='add-pet-form'>
-            <h2>Add a Pet</h2>
             <form onSubmit={handleSubmit}>
                 {/* name */}
                 <label>
@@ -113,6 +108,15 @@ const AddPetForm = () => {
                         ))}
                     </select>
                 </label>
+                {/* <label>
+                    Image:
+                    <input
+                        type='file'
+                        name='image'
+                        accept='image/*'
+                        onChange={handleInputChange}
+                    />
+                </label> */}
                 <button type="submit" className='add-pet-button'>
                     <span className="button-content">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
