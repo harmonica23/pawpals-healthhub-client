@@ -36,7 +36,7 @@ const AddPetForm = () => {
                 <form onSubmit={handleSubmit}>
                     {/* name */}
                     <label>
-                        Enter Pet's Name:
+                        Enter Pet Name:
                         <input
                             type="text"
                             name="name"
@@ -106,6 +106,7 @@ const AddPetForm = () => {
                             ))}
                         </select>
                     </label>
+                    {/* will upload pet image here once functionality works */}
                     {/* <label>
                     Image:
                     <input
