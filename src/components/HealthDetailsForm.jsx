@@ -62,12 +62,12 @@ const HealthDetailsForm = () => {
 
     return (
         <div className='profile-container'>
-                    <h2>Veterinary Consult</h2>
+                    <h2>Add Health Details</h2>
             <form onSubmit={handleSubmit} className='add-pet-form'>
                 {/* Veterinary Consult Section */}
                 <div>
                     <label>
-                        Date:
+                        date:
                         <input
                             type="date"
                             name="date"
@@ -76,7 +76,6 @@ const HealthDetailsForm = () => {
                         />
                     </label>
                     <label>
-                        Visit Type:
                         <select
                             name="visitType"
                             value={healthDetails.vetConsult.visitType}
@@ -93,7 +92,7 @@ const HealthDetailsForm = () => {
                         </select>
                     </label>
                     <label>
-                        Description: <br />
+                        description: <br />
                         <textarea
                             name="description"
                             value={healthDetails.vetConsult.description}
@@ -105,7 +104,7 @@ const HealthDetailsForm = () => {
                 {/* Vaccine Section */}
                 <div>
                     <label>
-                        Vaccine name:
+                        vaccine name:
                         <input
                             type="text"
                             name="name"
@@ -114,7 +113,7 @@ const HealthDetailsForm = () => {
                         />
                     </label>
                     <label>
-                        Date Given:
+                        date given:
                         <input
                             type="date"
                             name="dateGiven"
@@ -123,7 +122,7 @@ const HealthDetailsForm = () => {
                         />
                     </label>
                     <label>
-                        Next Due:
+                        next due:
                         <input
                             type="date"
                             name="nextDue"
@@ -135,7 +134,7 @@ const HealthDetailsForm = () => {
                 {/* Medication Section */}
                 <div>
                     <label>
-                        Medication name:
+                        medication name:
                         <input
                             type="text"
                             name="name"
@@ -144,7 +143,7 @@ const HealthDetailsForm = () => {
                         />
                     </label>
                     <label>
-                        Dose:
+                        dose:
                         <input
                             type="text"
                             name="dose"
@@ -153,7 +152,6 @@ const HealthDetailsForm = () => {
                         />
                     </label>
                     <label>
-                        Frequency:
                         <select
                             name="frequency"
                             value={healthDetails.med.frequency}
@@ -168,7 +166,7 @@ const HealthDetailsForm = () => {
                         </select>
                     </label>
                     <label>
-                        Start Date:
+                        started:
                         <input
                             type="date"
                             name="dateStart"
@@ -177,7 +175,7 @@ const HealthDetailsForm = () => {
                         />
                     </label>
                     <label>
-                        End Date:
+                        ended:
                         <input
                             type="date"
                             name="dateEnd"
@@ -189,7 +187,7 @@ const HealthDetailsForm = () => {
                 {/* Incident Section */}
                 <div>
                     <label>
-                        Problem date:
+                        problem date:
                         <input
                             type="date"
                             name="date"
@@ -198,14 +196,13 @@ const HealthDetailsForm = () => {
                         />
                     </label>
                     <label>
-                        Type of problem:
                         <select
                             name="incidentType"
                             value={healthDetails.incident.incidentType}
                             onChange={(e) => handleInputChange('incident', e)}
                             required
                         >
-                            <option value="">Select Incident Type</option> {/* Optional: Prompt user to select an option */}
+                            <option value="">Select Problem Type</option> {/* Optional: Prompt user to select an option */}
                             <option value="injury">Injury</option>
                             <option value="illness">Illness</option>
                             <option value="diagnosis">Diagnosis</option>
@@ -213,7 +210,7 @@ const HealthDetailsForm = () => {
                         </select>
                     </label>
                     <label>
-                        Description:
+                        description:
                         <textarea
                             name="description"
                             value={healthDetails.incident.description}

@@ -41,20 +41,19 @@ const DietWtForm = () => {
 
     return (
         <div className='profile-container'>
-            <h2>Add Diet Information</h2>
+            <h2>Add Diet Details</h2>
             <form onSubmit={handleSubmit} className='diet-wt-form'>
                 <label>
-                    Brand:
+                    brand:
                     <input type="text" name="brand" value={formData.brand} onChange={handleInputChange} required />
                 </label>
 
                 <label>
-                    Amount:
+                    amount:
                     <input type="text" name="amount" value={formData.amount} onChange={handleInputChange} required />
                 </label>
 
                 <label>
-                    Frequency:
                     <select name="frequency" value={formData.frequency} onChange={handleInputChange} required>
                         <option value="">Select Frequency</option>
                         <option value="once a day">Once a day</option>
@@ -66,12 +65,12 @@ const DietWtForm = () => {
                 </label>
 
                 <label>
-                    Feeding Notes: <br />
+                    feeding notes: <br />
                     <textarea name="feedingNotes" value={formData.feedingNotes} onChange={handleInputChange} maxLength="100" />
                 </label>
 
                 <label>
-                    Pet Weight (lbs):
+                    pet weight (lbs):
                     <input type="number" name="weight" value={formData.weight} onChange={handleInputChange} />
                 </label>
 

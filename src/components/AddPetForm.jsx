@@ -36,7 +36,7 @@ const AddPetForm = () => {
                 <form onSubmit={handleSubmit}>
                     {/* name */}
                     <label>
-                        Pet's Name:
+                        Enter Pet's Name:
                         <input
                             type="text"
                             name="name"
@@ -60,14 +60,13 @@ const AddPetForm = () => {
                     <br />
                     {/* Kind */}
                     <label>
-                        Type:
                         <select
                             name="kind"
                             value={formData.kind}
                             onChange={handleInputChange}
                             required
                         >
-                            <option value="">Select Kind</option>
+                            <option value="">Select Pet Type</option>
                             {["cat", "dog", "bird", "fish", "lizard", "snake", "rabbit", "hamster", "guinea pig", "ferret", "turtle", "other"].map((kind) => (
                                 <option key={kind} value={kind}>
                                     {kind}
@@ -78,7 +77,6 @@ const AddPetForm = () => {
                     <br />
                     {/* Gender */}
                     <label>
-                        Gender:
                         <select
                             name="gender"
                             value={formData.gender}
@@ -95,13 +93,12 @@ const AddPetForm = () => {
                     <br />
                     {/* Spay/Neuter Status */}
                     <label>
-                        Spay/Neuter Status:
                         <select
                             name="spayNeuterStatus"
                             value={formData.spayNeuterStatus}
                             onChange={handleInputChange}
                         >
-                            <option value="">Select Status</option>
+                            <option value="">Select Spay/Neuter Status</option>
                             {["spayed", "neutered", "intact"].map((spayNeuterStatus) => (
                                 <option key={spayNeuterStatus} value={spayNeuterStatus}>
                                     {spayNeuterStatus}
