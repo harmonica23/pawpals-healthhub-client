@@ -3,10 +3,16 @@
 [Github](https://github.com/harmonica23) [LinkedIn](https://www.linkedin.com/in/erica-harmon-lvt/)
 
 ### **_Getting Started_**
+- Fork and copy this repository
+- Fork and copy the [backend repository](https://github.com/harmonica23/pawpals-healthhub-backend)
+- Run NPM install on both front and backend
+- Run NPM run dev on both front and backend
+- Create a .env file for the backend
 
 ### **_Links_**
 - [Live Site](https://pawpals-sable.vercel.app/)
 - [Backend Github Repository](https://github.com/harmonica23/pawpals-healthhub-backend)
+- [Frontend Github Repository](https://github.com/harmonica23/pawpals-healthhub-client)
 - [Trello board](https://trello.com/invite/b/sDoBfhV5/ATTI061ff340b59908a6237f5f11eede5830046BF69B/pawpals-health-hub)
 - [ERD](https://lucid.app/lucidchart/9198234a-8c3c-43a7-b301-56b565ef2d21/edit?invitationId=inv_e1249628-23f3-4d94-9dcb-201c1d048ac5)
 - [Component Hierarchy Diagram](https://lucid.app/lucidchart/7083d453-4e2a-4061-93e7-3516ef4fc1d3/edit?invitationId=inv_b1af0cdd-1099-4f42-83b2-e9f914e00486&page=0_0#)
@@ -37,7 +43,7 @@
 - Node.js runtime environment
 
 ### **_Credits_**
-
+- Buttons inspired by the following from UIVERSE
 
 ### **_Future Updates_**
 - Implement feature using GCP and Multer where users can upload a profile picture for each one of their pets.
