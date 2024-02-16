@@ -51,6 +51,7 @@
 - Implement feature using GCP and Multer where users can upload a profile picture for each one of their pets.
 - Confetti animation if it is the pet's birthday today.
 - Announcement at the top of the profile page should populate with the pet's most recently entered diet and weight information.
+- Add forgotten password option at login.
 
 
 
