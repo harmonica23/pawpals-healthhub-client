@@ -11,7 +11,7 @@ const Profile = ({ user }) => {
         const fetchPets = async () => {
             if (user) {
                 try {
-                    const data = await Client.get('/pet')
+                    const data = await Client.get(`/pet/user/${user.id}`)
                     setPets(data.data);
                 } catch (error) {
                     console.error('Error fetching pets:', error)

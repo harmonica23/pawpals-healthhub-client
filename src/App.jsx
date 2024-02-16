@@ -49,7 +49,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile user={user}/>} />
           <Route path="/pet/:id" element={<PetDetail />} />
-          <Route path="/pet" element={<AddPetForm />} />
+          <Route path="/pet" element={<AddPetForm user={user}/>} />
           <Route path="/pet/:id/diet" element={<DietWtForm />} />
           <Route path="/pet/:id/vetConsult" element={<HealthDetailsForm />} />
           <Route path="/pet/:id/vax" element={<HealthDetailsForm />} />

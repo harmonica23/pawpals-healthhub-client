@@ -164,8 +164,9 @@ const PetDetail = () => {
                                 weighs {recentDiet.weight} lbs, and {age !== null && (
                                     `is ${age} years old.`
                                 )}</p>
+                                <br />
                             {isBirthday() && (
-                                <p>Happy Birthday, {pet.name}! 🎉 </p>
+                                <p className='bday'>Happy Birthday, {pet.name}! 🎉 </p>
                             )}
                         </div>
                     )}

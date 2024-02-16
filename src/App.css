@@ -48,6 +48,12 @@ footer {
   text-align: center;
 }
 
+.bday {
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgb(255, 110, 110, 0.5);
+  text-align: center;
+}
+
 .paw-img {
   width: 10%;
   height: 10%;
@@ -560,6 +566,9 @@ h1,
   .health-tables .button {
     font-size: 10px;
     padding: 0px 9px 0px 9px;
+  }
+  .bday {
+    font-size: 25px;
   }
 }
 

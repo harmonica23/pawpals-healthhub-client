@@ -3,7 +3,7 @@ import Client from '../services/api'
 import { useNavigate } from 'react-router-dom'
 
 
-const AddPetForm = () => {
+const AddPetForm = ({ user }) => {
     const navigate = useNavigate()
 
     const [formData, setFormData] = useState({
@@ -12,7 +12,6 @@ const AddPetForm = () => {
         kind: '',
         gender: '',
         spayNeuterStatus: '',
-        image: null,
     })
 
     const handleInputChange = (e) => {
@@ -26,7 +25,7 @@ const AddPetForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await Client.post('/pet', formData,);
+        await Client.post(`/pet/user/${user.id}`, formData,);
         navigate('/profile');
     };
 
