@@ -67,7 +67,7 @@ const EditPet = () => {
                 <form onSubmit={handleSubmit}>
                     {/* name */}
                     <label>
-                        Pet's Name:
+                        name:
                         <input
                             type="text"
                             name="name"
@@ -79,7 +79,7 @@ const EditPet = () => {
                     <br />
                     {/* DOB */}
                     <label>
-                        Birthday:
+                        birthday:
                         <input
                             type="date"
                             name="birthday"
@@ -91,7 +91,7 @@ const EditPet = () => {
                     <br />
                     {/* Kind */}
                     <label>
-                        Type:
+                        type:
                         <select
                             name="kind"
                             value={formData.kind}
@@ -109,7 +109,7 @@ const EditPet = () => {
                     <br />
                     {/* Gender */}
                     <label>
-                        Gender:
+                        gender:
                         <select
                             name="gender"
                             value={formData.gender}
@@ -126,7 +126,7 @@ const EditPet = () => {
                     <br />
                     {/* Spay/Neuter Status */}
                     <label>
-                        Spay/Neuter Status:
+                        spay/neuter status:
                         <select
                             name="spayNeuterStatus"
                             value={formData.spayNeuterStatus}
