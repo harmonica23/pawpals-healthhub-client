@@ -43,7 +43,7 @@
 - Node.js runtime environment
 
 ### **_Credits_**
-- Buttons inspired by the following from UIVERSE
+- Buttons inspired by the following from UIVERSE: [trash can](https://uiverse.io/vinodjangid07/tame-cobra-18), [pencil](https://uiverse.io/vinodjangid07/young-snake-87), and [heart button](https://uiverse.io/LilaRest/loud-walrus-26).
 
 ### **_Future Updates_**
 - Implement feature using GCP and Multer where users can upload a profile picture for each one of their pets.
