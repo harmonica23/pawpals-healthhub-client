@@ -42,7 +42,7 @@ const Profile = ({ user }) => {
 
     return (
         <div className='profile-container'>
-            <h2>Welcome, {user.userName.split(' ')[0]}!</h2>
+            <h2 className='welcome'>Welcome, {user.userName.split(' ')[0]}!</h2>
             {user ? (
                 <div>
                     {pets.map(pet => (
