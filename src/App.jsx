@@ -12,6 +12,7 @@ import AddPetForm from './components/AddPetForm'
 import DietWtForm from './components/DietWtForm'
 import HealthDetailsForm from './components/HealthDetailsForm'
 import EditPet from './components/EditPet'
+import Footer from './components/Footer'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -57,6 +58,7 @@ const App = () => {
           <Route path="/pet/edit/:id" element={<EditPet />} />
         </Routes>
       </main>
+      <Footer/>
     </div >
   )
 }

@@ -42,9 +42,9 @@ const Profile = ({ user }) => {
 
     return (
         <div className='profile-container'>
+            <h2>Welcome, {user.userName.split(' ')[0]}!</h2>
             {user ? (
                 <div>
-                    <h3>Welcome, {user.userName}!</h3>
                     {pets.map(pet => (
                         <div key={pet._id} className='pet-container'>
                             <h4>
@@ -96,7 +96,7 @@ const Profile = ({ user }) => {
                             d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228z"
                         ></path>
                     </svg>
-                    Add Pet
+                    ADD PET
                 </span>
             </button>
         </div>

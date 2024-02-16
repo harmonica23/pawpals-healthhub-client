@@ -40,9 +40,9 @@ const DietWtForm = () => {
 
 
     return (
-        <div>
+        <div className='profile-container'>
             <h2>Add Diet Information</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='diet-wt-form'>
                 <label>
                     Brand:
                     <input type="text" name="brand" value={formData.brand} onChange={handleInputChange} required />
@@ -66,7 +66,7 @@ const DietWtForm = () => {
                 </label>
 
                 <label>
-                    Feeding Notes:
+                    Feeding Notes: <br />
                     <textarea name="feedingNotes" value={formData.feedingNotes} onChange={handleInputChange} maxLength="100" />
                 </label>
 
@@ -75,7 +75,18 @@ const DietWtForm = () => {
                     <input type="number" name="weight" value={formData.weight} onChange={handleInputChange} />
                 </label>
 
-                <button type="submit">Submit</button>
+                <button type="submit" className='add-pet-button'>
+                    <span className="button-content">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="none" d="M0 0H24V24H0z"></path>
+                            <path
+                                fill="currentColor"
+                                d="M12.001 4.529c2.349-2.109 5.979-2.039 8.242.228 2.262 2.268 2.34 5.88.236 8.236l-8.48 8.492-8.478-8.492c-2.104-2.356-2.025-5.974.236-8.236 2.265-2.264 5.888-2.34 8.244-.228z"
+                            ></path>
+                        </svg>
+                        SUBMIT
+                    </span>
+                </button>
             </form>
         </div>
     );

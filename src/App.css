@@ -15,7 +15,30 @@ body {
   background-attachment: fixed;
   width: 100%;
   height: 100vh;
-  font-size: 2vw;
+  font-size: 1rem;
+}
+
+/* App.jsx container */
+.container {
+  max-width: 100%;
+  margin: 0;
+  padding: 1rem 0 1rem 0;
+  box-sizing: border-box;
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 1em;
+  font-size: 0.8em;
+}
+
+/* fancy name on pet detail page */
+.petname {
+  font-family: "Shrikhand", serif;
+  text-shadow: 2px 2px 4px rgb(255, 110, 110, 0.5);
 }
 
 .home-page {
@@ -31,36 +54,48 @@ body {
   width: auto;
 }
 
-/* App.jsx container */
-.container {
-  max-width: 100%;
-  margin: 0;
-  padding: 1rem 0 1rem 0;
-  box-sizing: border-box;
+textarea {
+  width: 100%; 
+  padding: 10px; 
+  box-sizing: border-box; 
+
 }
 
+/* landing profile page after signin */
 .profile-container {
-  max-width: 90%;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 2em auto;
   padding: 3vmin;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  background-color: rgba(255, 255, 255, 0.5); 
+  border-radius: 10px; 
+  text-align: center;
 }
 
-/* container for pet names on profile page */
 .pet-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; 
   align-items: center;
   padding: 2vmin;
+  margin-bottom: 1.5vmin; 
+  border: 1px solid #e0e0e0; 
+  border-radius: 8px; 
+  background-color: rgba(255, 255, 255, 0.7); 
 }
 
 .pet-name {
   text-decoration: none;
-  padding: 2vmin;
-  color: black;
+  padding: 1vmin;
+  color: #333;
+  transition: color 0.3s ease; 
+
+  &:hover {
+    color: #ff6b6b; /* Change text color on hover */
+  }
 }
 
 .navigation {
@@ -146,7 +181,6 @@ body {
       cursor: pointer;
   }
 }
-
 
 /* pencil button */
 .editBtn {
@@ -275,10 +309,10 @@ body {
   transform: scale(0.9);
 }
 
-/* add pet button */
+/* add pet button and submit buttons which has same className */
 .add-pet-button {
-  font-size: 14px;
-  font-family: inherit;
+  font-size: 16px;
+  font-family: "Fira Sans", sans-serif;  
   font-weight: 700;
   padding: 3px;
   border-radius: 16px;
@@ -317,9 +351,9 @@ body {
   transform: scale(1.4);
 }
 
-/* Other buttons... */
+/* big buttons on details page */
 .button {
-  margin: 2vmin auto;
+  margin: 1vmin auto 2vmin auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -331,8 +365,8 @@ body {
   border-width: 9px;
   border-radius: 35px;
   font-size: 20px;
-  font-weight: 500;
-  color: rgb(134, 124, 124);
+  font-weight: 400;
+  color: rgb(71, 62, 62);
   font-family: "Fira Sans", sans-serif;
   transition: transform 400ms cubic-bezier(.68,-0.55,.27,2.5), 
   border-color 400ms ease-in-out,
@@ -414,7 +448,9 @@ body {
 
 
 /* style AddPetForm */
-.add-pet-form {
+.add-pet-form, 
+.diet-wt-form,
+.edit-form {
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
@@ -423,14 +459,20 @@ body {
   padding-top: 4vmin;
 }
 
-.add-pet-form label {
+.add-pet-form label,
+.diet-wt-form label,
+.edit-form label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
 .add-pet-form input,
-.add-pet-form select {
+.add-pet-form select,
+.diet-wt-form input,
+.diet-wt-form select,
+.edit-form input,
+.edit-form select {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
@@ -438,14 +480,14 @@ body {
   border-radius: 4px;
 }
 
-.add-pet-form svg {
-  margin-right: 6px;
-}
-
-
 
 /* Pet Detail Page */
-.top, h3, .health-tables {
+/* .top, */
+h3,
+h2,
+h1, 
+.health-tables,
+.diet-table {
   max-width: 90%;
   margin: auto;
   padding: 3vmin;
@@ -453,6 +495,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center; 
+}
+
+.add-pet-button {
+  margin: 2em auto;
+  display: flex;
 }
 
 /* Updated styling for tables */
@@ -477,7 +524,7 @@ body {
 
 .diet-table th,
 .health-tables th {
-  background-color: rgba(230, 131, 135, 1);
+  background-color: rgba(230, 131, 135, .8);
   color: white;
 }
 
@@ -485,4 +532,51 @@ body {
 .health-tables tbody tr:hover {
   background-color: #f5f5f5;
 }
+
+/* YourFormStyles.css */
+.signin-container {
+  max-width: 30em; 
+  margin: 3em auto;
+  padding: 2em; 
+  border: 1px solid #ccc;
+  border-radius: 1em; /* Use em for border-radius to be relative to font size */
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.1); /* Use em for box-shadow to be relative to font size */
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1.5em; /* Use em for margin to be relative to font size */
+}
+
+label {
+  font-size: 1em;
+  margin-bottom: 0.8em; /* Use em for margin to be relative to font size */
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 1em; /* Use em for padding to be relative to font size */
+  font-size: 0.875em; /* Use em for font-size to be relative to parent font size */
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  margin-bottom: 1.5em; /* Use em for border-radius to be relative to font size */
+}
+
+/* Responsive styles for different screen sizes */
+.signin-button {
+  background-color: rgba(243, 131, 135, 0.5);
+  color: white;
+  padding: .3em .5em; /* Use em for padding to be relative to font size */
+  font-size: 1.2em;
+  border: none;
+  border-radius: 0.5em; /* Use em for border-radius to be relative to font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
 
