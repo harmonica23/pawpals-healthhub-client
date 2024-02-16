@@ -48,7 +48,7 @@ const Profile = ({ user }) => {
                     {pets.map(pet => (
                         <div key={pet._id} className='pet-container'>
                             <h4>
-                            <Link to={`/pet/${pet._id}`} className='pet-name'>{pet.name}</Link>
+                                <Link to={`/pet/${pet._id}`} className='pet-name'>{pet.name}</Link>
                             </h4>
                             <button onClick={() => handleEditPetClick(pet._id)} className='editBtn'>
                                 <svg height="1em" viewBox="0 0 512 512">

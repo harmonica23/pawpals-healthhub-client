@@ -62,7 +62,7 @@ const HealthDetailsForm = () => {
 
     return (
         <div className='profile-container'>
-                    <h2>Add Health Details</h2>
+            <h2>Add Health Details</h2>
             <form onSubmit={handleSubmit} className='add-pet-form'>
                 {/* Veterinary Consult Section */}
                 <div>
@@ -81,7 +81,7 @@ const HealthDetailsForm = () => {
                             value={healthDetails.vetConsult.visitType}
                             onChange={(e) => handleInputChange('vetConsult', e)}
                         >
-                            <option value="">Select Incident Type</option> 
+                            <option value="">Select Incident Type</option>
                             <option value="healthy">Healthy</option>
                             <option value="injury">Injury</option>
                             <option value="illness">Illness</option>
@@ -157,7 +157,7 @@ const HealthDetailsForm = () => {
                             value={healthDetails.med.frequency}
                             onChange={(e) => handleInputChange('med', e)}
                         >
-                            <option value="">Select Frequency</option> 
+                            <option value="">Select Frequency</option>
                             <option value="once a day">once a day</option>
                             <option value="twice a day">twice a day</option>
                             <option value="three times a day">three times a day</option>
@@ -202,7 +202,7 @@ const HealthDetailsForm = () => {
                             onChange={(e) => handleInputChange('incident', e)}
                             required
                         >
-                            <option value="">Select Problem Type</option> 
+                            <option value="">Select Problem Type</option>
                             <option value="injury">Injury</option>
                             <option value="illness">Illness</option>
                             <option value="diagnosis">Diagnosis</option>

@@ -15,7 +15,7 @@ const Nav = ({ user, handleLogOut }) => {
     const handleLogOutAndCloseMenu = () => {
         handleLogOut();
         closeMenu();
-    };    
+    };
 
     let userOptions
     if (user) {
@@ -44,7 +44,7 @@ const Nav = ({ user, handleLogOut }) => {
     return (
         <header>
             <nav className='navigation'>
-            <div className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+                <div className={`menu-toggle ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
                     <div className="bar"></div>
                     <div className="bar"></div>
                     <div className="bar"></div>

@@ -44,6 +44,8 @@ footer {
 
 .summary {
   font-size: 0.8rem;
+  text-shadow: 2px 2px 4px rgb(255, 110, 110, 0.5);
+  text-align: center;
 }
 
 .paw-img {
@@ -72,7 +74,7 @@ textarea {
 
 }
 
-/* landing profile page after signin */
+/* landing profile page after user signin */
 .profile-container {
   max-width: 100%;
   margin: 2em auto;
@@ -106,7 +108,6 @@ textarea {
 
   &:hover {
     color: #ff6b6b;
-    /* Change text color on hover */
   }
 }
 
@@ -318,7 +319,7 @@ textarea {
   transform: scale(0.9);
 }
 
-/* add pet button and submit buttons which has same className */
+/* add pet button and submit buttons have same className */
 .add-pet-button {
   font-size: 16px;
   font-family: "Fira Sans", sans-serif;
@@ -358,7 +359,7 @@ textarea {
   transform: scale(1.4);
 }
 
-/* big buttons on details page */
+/* big buttons on pet detail page */
 .button {
   margin: 1vmin auto 2vmin auto;
   display: flex;
@@ -452,7 +453,7 @@ textarea {
 }
 
 
-/* style AddPetForm */
+/* style forms */
 .add-pet-form,
 .diet-wt-form,
 .edit-form {
@@ -507,7 +508,7 @@ h1,
   display: flex;
 }
 
-/* Updated styling for tables */
+/* styling for tables */
 .diet-table,
 .health-tables {
   width: 90%;
@@ -540,6 +541,7 @@ h1,
 }
 
 @media screen and (max-width: 768px) {
+
   .diet-table table,
   .health-tables table {
     margin-bottom: 20px;
