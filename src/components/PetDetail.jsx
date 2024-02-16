@@ -157,21 +157,22 @@ const PetDetail = () => {
                 <div className='top'>
                     <h1 className='petname'>{pet.name}</h1>
                     <img src="/images/paw.png" alt="Paw Image" className='paw-img'/>
-                    {/* Display pet image here */}
+<br />
                     {/* {petImage && (
                         <img src={petImage} alt={`Image of ${pet.name}`} />
                     )} */}
-                    {/* {recentDiet && (
+
+                    {recentDiet && (
                         <div>
-                            <p>{pet.name} eats {recentDiet.amount} of {recentDiet.brand} {recentDiet.frequency},
+                            <p className='summary'>{pet.name} eats {recentDiet.amount} of {recentDiet.brand} {recentDiet.frequency},
                                 weighs {recentDiet.weight} lbs, and {age !== null && (
                                     `is ${age} years old.`
-                                )}</p> */}
+                                )}</p>
                     {isBirthday() && (
                         <p>Happy Birthday, {pet.name}! 🎉 </p>
                     )}
-                    {/* </div> */}
-                    {/* )} */}
+                    </div>
+                    )}
                 </div>
             )}
         <div className='profile-container'>

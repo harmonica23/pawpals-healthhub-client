@@ -42,6 +42,10 @@ footer {
   text-shadow: 2px 2px 4px rgb(255, 110, 110, 0.5);
 }
 
+.summary {
+  font-size: 0.8rem;
+}
+
 .paw-img {
   width: 10%;
   height: 10%;
