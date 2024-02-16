@@ -219,7 +219,6 @@ const HealthDetailsForm = () => {
                         />
                     </label>
                 </div>
-            </form>
             <button type="submit" className='add-pet-button'>
                 <span className="button-content">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -232,6 +231,7 @@ const HealthDetailsForm = () => {
                     SUBMIT
                 </span>
             </button>
+            </form>
         </div>
     );
 };
