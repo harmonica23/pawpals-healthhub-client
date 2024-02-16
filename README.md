@@ -18,7 +18,7 @@
 - [Component Hierarchy Diagram](https://lucid.app/lucidchart/7083d453-4e2a-4061-93e7-3516ef4fc1d3/edit?invitationId=inv_b1af0cdd-1099-4f42-83b2-e9f914e00486&page=0_0#)
 
 ### **_Project Description_**
-**PawPals Health Hub** is a mobile application designed to empower pet owners with a comprehensive tool for tracking and managing their pet's health. With a user-friendly interface, PawPals Health Hub allows individuals to create profiles for their beloved pets, ensuring all vital health information is readily accessible at their fingertips.
+**PawPals Health Hub** is a mobile and desktop friendly application designed to empower pet owners with a comprehensive tool for tracking and managing their pet's health. With a user-friendly interface, PawPals Health Hub allows individuals to create profiles for their beloved pets, ensuring all vital health information is readily accessible at their fingertips.
 
 ### **_Key Features_**
 **Pet Profile:** Input essential details including name, birthday, gender, and spay/neuter status.
