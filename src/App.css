@@ -41,6 +41,12 @@ footer {
   text-shadow: 2px 2px 4px rgb(255, 110, 110, 0.5);
 }
 
+.paw-img {
+  width: 10%;
+  height: 10%;
+  opacity: 0.6;
+}
+
 .home-page {
   display: flex;
   justify-content: center;
@@ -476,7 +482,7 @@ textarea {
 
 
 /* Pet Detail Page */
-/* .top, */
+.top,
 h3,
 h2,
 h1,
@@ -531,35 +537,32 @@ h1,
 @media screen and (max-width: 768px) {
   .diet-table table,
   .health-tables table {
-    width: 100%;
     margin-bottom: 20px;
     font-size: 10px;
+    padding: 6px;
   }
 
   .diet-table th,
   .diet-table td,
   .health-tables th,
   .health-tables td {
-    padding: 10px;
+    padding: 8px;
   }
 
   .diet-table .button,
   .health-tables .button {
-    font-size: 11px;
-    padding: 8px;
+    font-size: 10px;
+    padding: 0px 9px 0px 9px;
   }
 }
 
-/* YourFormStyles.css */
 .signin-container {
   max-width: 30em;
   margin: 3em auto;
   padding: 2em;
   border: 1px solid #ccc;
   border-radius: 1em;
-  /* Use em for border-radius to be relative to font size */
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
-  /* Use em for box-shadow to be relative to font size */
 }
 
 .signin-form {
@@ -569,38 +572,30 @@ h1,
 
 .form-group {
   margin-bottom: 1.5em;
-  /* Use em for margin to be relative to font size */
 }
 
 label {
   font-size: 1em;
   margin-bottom: 0.8em;
-  /* Use em for margin to be relative to font size */
   display: block;
 }
 
 input {
   width: 100%;
   padding: 1em;
-  /* Use em for padding to be relative to font size */
   font-size: 0.875em;
-  /* Use em for font-size to be relative to parent font size */
   border: 1px solid #ccc;
   border-radius: 0.5em;
   margin-bottom: 1.5em;
-  /* Use em for border-radius to be relative to font size */
 }
 
-/* Responsive styles for different screen sizes */
 .signin-button {
   background-color: rgba(243, 131, 135, 0.5);
   color: white;
   padding: .3em .5em;
-  /* Use em for padding to be relative to font size */
   font-size: 1.2em;
   border: none;
   border-radius: 0.5em;
-  /* Use em for border-radius to be relative to font size */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

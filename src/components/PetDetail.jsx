@@ -156,6 +156,7 @@ const PetDetail = () => {
             {pet && (
                 <div className='top'>
                     <h1 className='petname'>{pet.name}</h1>
+                    <img src="/images/paw.png" alt="Paw Image" className='paw-img'/>
                     {/* Display pet image here */}
                     {/* {petImage && (
                         <img src={petImage} alt={`Image of ${pet.name}`} />

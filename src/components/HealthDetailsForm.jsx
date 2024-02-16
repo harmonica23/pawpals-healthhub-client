@@ -104,9 +104,8 @@ const HealthDetailsForm = () => {
                 </div>
                 {/* Vaccine Section */}
                 <div>
-                    <h3>Vaccine</h3>
                     <label>
-                        Name:
+                        Vaccine name:
                         <input
                             type="text"
                             name="name"
@@ -135,9 +134,8 @@ const HealthDetailsForm = () => {
                 </div>
                 {/* Medication Section */}
                 <div>
-                    <h3>Medication</h3>
                     <label>
-                        Name:
+                        Medication name:
                         <input
                             type="text"
                             name="name"
@@ -190,9 +188,8 @@ const HealthDetailsForm = () => {
                 </div>
                 {/* Incident Section */}
                 <div>
-                    <h3>Problem, Incident, or Issue</h3>
                     <label>
-                        Date:
+                        Problem date:
                         <input
                             type="date"
                             name="date"
@@ -201,7 +198,7 @@ const HealthDetailsForm = () => {
                         />
                     </label>
                     <label>
-                        Incident Type:
+                        Type of problem:
                         <select
                             name="incidentType"
                             value={healthDetails.incident.incidentType}
