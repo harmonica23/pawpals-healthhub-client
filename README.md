@@ -35,6 +35,8 @@
 
 **PawPals Health Hub** aims to simplify the management of your pet's well-being, providing a centralized platform to track their health journey and facilitate effective communication with veterinarians.
 
+**Fun Feature** on pet's detail page announces their birthday if it is, indeed, their birthday!
+
 
 ### **_Technologies Used_**
 - MongoDB with Mongoose for database management
@@ -47,9 +49,9 @@
 
 ### **_Future Updates_**
 - Implement feature using GCP and Multer where users can upload a profile picture for each one of their pets.
-- Feature to announce pet's birthday on their profile page if it is, indeed, their birthday!
-- Announcement at the top of the profile page should populate with the pet's most recently entered 
-- Create a new component and render a footer for the project.
+- Confetti animation if it is the pet's birthday today.
+- Announcement at the top of the profile page should populate with the pet's most recently entered diet and weight information.
+
 
 
 &copy; 2024 PawPals Health Hub
