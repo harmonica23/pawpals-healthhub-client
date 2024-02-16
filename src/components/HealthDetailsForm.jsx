@@ -81,7 +81,7 @@ const HealthDetailsForm = () => {
                             value={healthDetails.vetConsult.visitType}
                             onChange={(e) => handleInputChange('vetConsult', e)}
                         >
-                            <option value="">Select Incident Type</option> {/* Optional: Prompt user to select an option */}
+                            <option value="">Select Incident Type</option> 
                             <option value="healthy">Healthy</option>
                             <option value="injury">Injury</option>
                             <option value="illness">Illness</option>
@@ -157,7 +157,7 @@ const HealthDetailsForm = () => {
                             value={healthDetails.med.frequency}
                             onChange={(e) => handleInputChange('med', e)}
                         >
-                            <option value="">Select Frequency</option> {/* Optional: Prompt user to select an option */}
+                            <option value="">Select Frequency</option> 
                             <option value="once a day">once a day</option>
                             <option value="twice a day">twice a day</option>
                             <option value="three times a day">three times a day</option>
@@ -202,7 +202,7 @@ const HealthDetailsForm = () => {
                             onChange={(e) => handleInputChange('incident', e)}
                             required
                         >
-                            <option value="">Select Problem Type</option> {/* Optional: Prompt user to select an option */}
+                            <option value="">Select Problem Type</option> 
                             <option value="injury">Injury</option>
                             <option value="illness">Illness</option>
                             <option value="diagnosis">Diagnosis</option>
