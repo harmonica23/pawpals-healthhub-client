@@ -48,14 +48,11 @@ const PetDetail = () => {
     };
 
     const isBirthday = () => {
-        if (pet.birthday) {
-            const today = new Date();
-            const birthday = new Date(pet.birthday);
-            return today.getMonth() === birthday.getMonth() && today.getDate() === birthday.getDate();
-        }
-        return false;
+        const today = new Date();
+        const todayMonthDay = (today.getMonth() + 1).toString().padStart(2, '0') + '-' + today.getDate().toString().padStart(2, '0');
+        const birthdayMonthDay = pet?.birthday?.substring(5, 10); 
+        return todayMonthDay === birthdayMonthDay;
     };
-
 
 
     const handleDelete = async (category, entry) => {
@@ -86,7 +83,6 @@ const PetDetail = () => {
                     petData = await Client.get(`/incident/pet/${pet}`);
                     setIncidents(petData.data);
                     break;
-                // Add more cases for other categories if needed
                 default:
                     break;
             }
